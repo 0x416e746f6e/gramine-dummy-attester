@@ -44,11 +44,13 @@ sgx_sign: python.manifest
 
 .PHONY: clean
 clean: reset
-	$(RM) *.manifest *.manifest.sgx *.token *.sig OUTPUT* *.PID *.report 
-	$(RM) -r /gramine-dummy-attester/dummyattester/__pycache__
+	$(RM) *.manifest *.manifest.sgx *.token *.sig OUTPUT* *.PID *.report
+	$(RM) -r /app/gramine-dummy-attester/dummyattester/__pycache__
 
 
 .PHONY: reset
 reset:
-	$(RM) -r /gramine-dummy-attester/dummyattester/enclave_data/* /gramine-dummy-attester/dummyattester/output_data/* /gramine-dummy-attester/dummyattester/input_data/*
-
+	$(RM) -r \
+		/app/gramine-dummy-attester/dummyattester/enclave_data/* \
+		/app/gramine-dummy-attester/dummyattester/output_data/* \
+		/app/gramine-dummy-attester/dummyattester/input_data/*
